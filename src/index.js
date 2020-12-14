@@ -1,17 +1,29 @@
 import React from 'react';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@material-ui/styles';
 
+import checkoutReducer from "./store/reducers/checkoutReducer";
+
 import theme from './theme';
 
-ReactDOM.render(
+const rootReducer = combineReducers({
+  checkout: checkoutReducer
+});
 
-  <ThemeProvider theme={theme}>
-    <App />
-  </ThemeProvider>,
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+ReactDOM.render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
