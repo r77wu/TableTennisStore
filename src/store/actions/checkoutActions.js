@@ -6,3 +6,10 @@ export const addToCart = (newItem) => {
     newItem
   }
 }
+
+export const updateCart = (updateCart) => {
+  return {
+    type: actionTypes.UPDATE_CART,
+    updateCart
+  }
+}

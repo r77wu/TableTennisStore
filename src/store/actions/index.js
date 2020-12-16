@@ -1,3 +1,4 @@
 export  {
-  addToCart
+  addToCart,
+  updateCart
 } from './checkoutActions';

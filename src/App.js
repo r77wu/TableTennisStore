@@ -9,6 +9,7 @@ import RubberItems from "./components/Rubber/Rubber";
 import TablesItems from "./components/Tables/Tables";
 import BallsItems from "./components/Balls/Balls";
 import Cart from './components/Cart/Cart';
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/tables" exact component={TablesItems}/>
         <Route path="/balls" exact component={BallsItems}/>
         <Route path="/cart" exact component={Cart}/>
+        <Route path="/checkout" exact component={Checkout}/>
       </Switch>
       <Footer/>
     </BrowserRouter>
